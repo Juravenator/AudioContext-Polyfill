@@ -13,6 +13,11 @@ Licensed under the MIT license
   window.OfflineAudioContext = window.OfflineAudioContext ||
                                window.webkitOfflineAudioContext;
 
+  if (!window.AudioContext) {
+    alert('Audio not supported on this device');
+    return;
+  }
+
   var Proto = AudioContext.prototype;
 
   var tmpctx = new AudioContext();
